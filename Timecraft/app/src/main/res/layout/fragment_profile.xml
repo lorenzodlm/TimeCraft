@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".ui.theme.Homepage">
+    tools:context=".ui.profile.ProfileFragment">
 
     <LinearLayout
         android:layout_width="414dp"
@@ -18,7 +18,7 @@
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/Task"
-            android:name="com.example.timecraft.ui.task.DashboardFragment"
+            android:name="com.example.timecraft.ui.task.TaskFragment"
             android:layout_width="132dp"
             android:layout_height="80dp" />
 
@@ -30,7 +30,7 @@
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/Profile"
-            android:name="com.example.timecraft.ui.task.DashboardFragment"
+            android:name="com.example.timecraft.ui.profile.ProfileFragment"
             android:layout_width="134dp"
             android:layout_height="80dp"
             android:layout_marginEnd="16dp" />
