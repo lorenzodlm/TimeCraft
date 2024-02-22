@@ -3,15 +3,18 @@ package com.example.timecraft
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import com.example.timecraft.databinding.ActivityMainBinding
 import com.example.timecraft.ui.task.TaskFragment
 import com.example.timecraft.ui.home.HomeFragment
 import com.example.timecraft.ui.profile.ProfileFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
+    private val view: ActivityMainBinding by lazy{ActivityMainBinding.inflate(layoutInflater)}
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(view.root)
+
         val view: BottomNavigationView = findViewById(R.id.bottom_navigation)
 
         view.setOnItemSelectedListener { menuItem ->

@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.databinding.DataBindingUtil.setContentView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -15,42 +16,28 @@ import com.example.timecraft.databinding.FragmentProfileBinding
 
 class ProfileFragment : Fragment() {
 
-    private var _binding: FragmentProfileBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
-
+    private val view: FragmentProfileBinding by lazy { FragmentProfileBinding.inflate(layoutInflater) }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentProfileBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-
-        val achievementsButton: Button = binding.achievementsButton
-        val settingsIcon: ImageView = binding.settingsIcon
-        val completedTasksButton: Button = binding.completedTasksButton
-
-        // Set click listeners
-        achievementsButton.setOnClickListener {
-            findNavController().navigate(R.id.action_profileFragment_to_achievementsFragment)
-        }
-
-        settingsIcon.setOnClickListener {
-            findNavController().navigate(R.id.action_profileFragment_to_settingsFragment)
-        }
-
-        completedTasksButton.setOnClickListener {
-            findNavController().navigate(R.id.action_profileFragment_to_completedTasksFragment)
-        }
-
-        return root
+        return view.root
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+    override fun onViewCreated(binding: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(binding, savedInstanceState)
+
+        view.settingsBtn.setOnClickListener {
+            requireActivity().supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.fragment_container, SettingsFragment())
+                .addToBackStack(SettingsFragment::class.java.name)
+                .commit()
+        }
+
+
+
     }
+
 }
