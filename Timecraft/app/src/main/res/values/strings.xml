@@ -13,6 +13,8 @@
     <string name="title_profile">Profile</string>
     <string name="completed_tasks_counter">Completed Tasks</string>
     <string name="achievements_count">Achievements</string>
-    <string name="loot_counter">Loot Collected</string>
+    <string name="inventory">Inventory</string>
     <string name="settings">Settings</string>
+    <string name="achievements_button">Achievements button</string>
+    <string name="inventory_btn">Inventory Button\n</string>
 </resources>

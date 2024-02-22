@@ -13,6 +13,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.timecraft.R
 import com.example.timecraft.databinding.FragmentProfileBinding
+import com.example.timecraft.ui.task.TaskFragment
 
 class ProfileFragment : Fragment() {
 
@@ -35,6 +36,23 @@ class ProfileFragment : Fragment() {
                 .addToBackStack(SettingsFragment::class.java.name)
                 .commit()
         }
+
+        view.achievementsBtn.setOnClickListener {
+            requireActivity().supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.fragment_container, SettingsFragment())
+                .addToBackStack(AchievementFragment::class.java.name)
+                .commit()
+        }
+
+        view.completedTasksBtn.setOnClickListener {
+            requireActivity().supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.fragment_container, SettingsFragment())
+                .addToBackStack(TaskFragment::class.java.name)
+                .commit()
+        }
+
 
 
 
