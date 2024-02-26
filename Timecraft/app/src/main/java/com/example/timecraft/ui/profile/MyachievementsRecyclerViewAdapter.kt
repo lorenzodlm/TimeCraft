@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.example.timecraft.R
-
 import com.example.timecraft.ui.profile.placeholder.PlaceholderContent.PlaceholderItem
 import com.example.timecraft.databinding.FragmentAchievementsBinding
 
@@ -15,37 +14,38 @@ import com.example.timecraft.databinding.FragmentAchievementsBinding
  * TODO: Replace the implementation with code for your data type.
  */
 class MyachievementsRecyclerViewAdapter(
-    private val values: List<PlaceholderItem>
-) : RecyclerView.Adapter<MyachievementsRecyclerViewAdapter.ViewHolder>() {
+//    private val values: List<PlaceholderItem>
+)
+//: RecyclerView.Adapter<MyachievementsRecyclerViewAdapter.ViewHolder>() {
+//
+//    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+//        return ViewHolder(
+//            FragmentAchievementsBinding.inflate(
+//                LayoutInflater.from(parent.context),
+//                parent,
+//                false
+//            )
+//        )
+//
+//    }
+//
+//    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+//        val item = values[position]
+//        holder.idView.text = item.id
+//        holder.contentView.text = item.content
+//    }
+//
+//    override fun getItemCount(): Int = values.size
+//
+//    inner class ViewHolder(binding: FragmentAchievementsBinding) :
+//        RecyclerView.ViewHolder(binding.root) {
+//        val idView: TextView = binding.itemNumber
+//        val contentView: TextView = binding.content
+//
+//        override fun toString(): String {
+//            return super.toString() + " '" + contentView.text + "'"
+//        }
+//    }
 
-        return ViewHolder(
-            FragmentAchievementsBinding.inflate(
-                LayoutInflater.from(parent.context),
-                parent,
-                false
-            )
-        )
-
-    }
-
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val item = values[position]
-        holder.idView.text = item.id
-        holder.contentView.text = item.content
-    }
-
-    override fun getItemCount(): Int = values.size
-
-    inner class ViewHolder(binding: FragmentAchievementsBinding) :
-        RecyclerView.ViewHolder(binding.root) {
-        val idView: TextView = binding.itemNumber
-        val contentView: TextView = binding.content
-
-        override fun toString(): String {
-            return super.toString() + " '" + contentView.text + "'"
-        }
-    }
-
-}
+// }
