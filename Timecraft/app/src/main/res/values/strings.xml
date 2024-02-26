@@ -16,5 +16,9 @@
     <string name="inventory">Inventory</string>
     <string name="settings">Settings</string>
     <string name="achievements_button">Achievements button</string>
-    <string name="inventory_btn">Inventory Button\n</string>
+    <string name="inventory_btn">Inventory Button</string>
+    <string name="settings_title">Settings</string>
+    <string name="appearance_text">Appearance</string>
+    <string name="account_text">Account</string>
+    <string name="datetime_text">Date/Time Format</string>
 </resources>

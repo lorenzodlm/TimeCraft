@@ -36,7 +36,7 @@
         android:id="@+id/navigation_achievement"
         android:name="com.example.timecraft.ui.profile.AchievementFragment"
         android:label="Achievements"
-        tools:layout="@layout/fragment_achievement" />
+        tools:layout="@layout/fragment_achievements" />
 
     <fragment
         android:id="@+id/navigation_settings"

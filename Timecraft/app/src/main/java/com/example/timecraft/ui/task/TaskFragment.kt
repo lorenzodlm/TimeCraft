@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.timecraft.databinding.FragmentProfileBinding
 import com.example.timecraft.databinding.FragmentTaskBinding
 
 class TaskFragment : Fragment() {

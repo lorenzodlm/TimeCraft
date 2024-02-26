@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.timecraft.databinding.FragmentHomeBinding
-import com.example.timecraft.databinding.FragmentProfileBinding
 
 class HomeFragment : Fragment() {
 

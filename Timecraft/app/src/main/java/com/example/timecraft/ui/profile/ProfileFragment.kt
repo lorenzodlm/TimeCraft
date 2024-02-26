@@ -4,13 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
-import androidx.databinding.DataBindingUtil.setContentView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
 import com.example.timecraft.R
 import com.example.timecraft.databinding.FragmentProfileBinding
 import com.example.timecraft.ui.task.TaskFragment
@@ -40,7 +34,7 @@ class ProfileFragment : Fragment() {
         view.achievementsBtn.setOnClickListener {
             requireActivity().supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.fragment_container, SettingsFragment())
+                .replace(R.id.fragment_container, AchievementFragment())
                 .addToBackStack(AchievementFragment::class.java.name)
                 .commit()
         }
@@ -48,7 +42,7 @@ class ProfileFragment : Fragment() {
         view.completedTasksBtn.setOnClickListener {
             requireActivity().supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.fragment_container, SettingsFragment())
+                .replace(R.id.fragment_container, CompletedTasksFragment())
                 .addToBackStack(TaskFragment::class.java.name)
                 .commit()
         }
