@@ -50,4 +50,5 @@
         android:label="Completed Tasks"
         tools:layout="@layout/fragment_completed_tasks" />
 
+
 </navigation>

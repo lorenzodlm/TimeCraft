@@ -2,30 +2,68 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal">
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:background="@color/orange"
+            android:gravity="center">
 
-    <ImageView
-        android:id="@+id/achievement_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_award_black" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:text="@string/achievements_title"
+                android:textSize="42sp">
 
-    <TextView
-        android:id="@+id/achievement_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Achievement Name"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:layout_marginStart="15dp"
-        android:textAppearance="?attr/textAppearanceListItem" />
+            </TextView>
 
-    <TextView
-        android:id="@+id/achievement_description"
-        android:layout_width="wrap_content"
+        </LinearLayout>
+    </RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Achievement Description"
-        android:textSize="14sp"
-        android:layout_marginStart="8sp"
-        android:textAppearance="?attr/textAppearanceListItem" />
+        android:layout_marginTop="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginStart="10dp">
+            <ImageView
+                android:id="@+id/achievement_icon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_award_black" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/achievement_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lorem ipsum"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginStart="8dp"
+                    android:gravity="center"/>
+                <TextView
+                    android:id="@+id/achievement_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor."
+                    android:textSize="11sp"
+                    android:layout_marginStart="16sp"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
 </LinearLayout>

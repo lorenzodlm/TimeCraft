@@ -41,9 +41,9 @@
                 android:layout_width="400dp"
                 android:layout_height="wrap_content"
                 app:cardElevation="10dp"
-                app:cardCornerRadius="30dp">
+                app:cardCornerRadius="30dp"
+                android:id="@+id/account_btn_settings">
                 <LinearLayout
-                    android:id="@+id/account_btn_settings"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
@@ -71,9 +71,9 @@
                 android:layout_height="wrap_content"
                 app:cardElevation="10dp"
                 app:cardCornerRadius="30dp"
-                android:layout_marginTop="5dp">
+                android:layout_marginTop="5dp"
+                android:id="@+id/appearance_btn_settings">
                 <LinearLayout
-                    android:id="@+id/appearance_btn_settings"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
@@ -101,9 +101,9 @@
                 android:layout_height="wrap_content"
                 app:cardElevation="10dp"
                 app:cardCornerRadius="30dp"
-                android:layout_marginTop="5dp">
+                android:layout_marginTop="5dp"
+                android:id="@+id/datetime_btn_settings">
                 <LinearLayout
-                    android:id="@+id/datetime_btn_settings"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"

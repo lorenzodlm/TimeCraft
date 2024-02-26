@@ -8,7 +8,7 @@
     android:layout_marginLeft="16dp"
     android:layout_marginRight="16dp"
     app:layoutManager="LinearLayoutManager"
-    tools:context=".ui.profile.achievementsFragment"
+    tools:context=".ui.profile.AchievementFragment"
     android:id="@+id/achievementsRV">
 
 </androidx.recyclerview.widget.RecyclerView>
