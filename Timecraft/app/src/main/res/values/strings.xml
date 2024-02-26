@@ -11,7 +11,7 @@
     <string name="settings_icon">Settings Icon</string>
     <string name="title_tasks">Tasks</string>
     <string name="title_profile">Profile</string>
-    <string name="completed_tasks_counter">Completed Tasks</string>
+    <string name="completed_tasks_counter">Completed</string>
     <string name="achievements_count">Achievements</string>
     <string name="inventory">Inventory</string>
     <string name="settings">Settings</string>
