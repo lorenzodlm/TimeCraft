@@ -40,8 +40,8 @@ class MyachievementsRecyclerViewAdapter(
 
     inner class ViewHolder(binding: FragmentAchievementsBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        val idView: TextView = binding.itemNumber
-        val contentView: TextView = binding.content
+        val idView: TextView = binding.achievementName
+        val contentView: TextView = binding.achievementDescription
 
         override fun toString(): String {
             return super.toString() + " '" + contentView.text + "'"
