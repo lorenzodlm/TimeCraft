@@ -4,6 +4,7 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ListView
 import android.widget.TextView
 import com.example.timecraft.R
 
@@ -15,8 +16,13 @@ import com.example.timecraft.databinding.FragmentAchievementsBinding
  * TODO: Replace the implementation with code for your data type.
  */
 class MyachievementsRecyclerViewAdapter(
-    private val values: List<PlaceholderItem>
-) : RecyclerView.Adapter<MyachievementsRecyclerViewAdapter.ViewHolder>() {
+    private val values: List<PlaceholderItem>) {
+
+    private class ViewHolder(binding: FragmentAchievementsBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        val achievementRV = binding.achievementsRV
+
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
@@ -29,23 +35,10 @@ class MyachievementsRecyclerViewAdapter(
         )
 
     }
-
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val item = values[position]
-        holder.idView.text = item.id
-        holder.contentView.text = item.content
-    }
-
-    override fun getItemCount(): Int = values.size
-
-    inner class ViewHolder(binding: FragmentAchievementsBinding) :
-        RecyclerView.ViewHolder(binding.root) {
-        val idView: TextView = binding.achievementName
-        val contentView: TextView = binding.achievementDescription
-
-        override fun toString(): String {
-            return super.toString() + " '" + contentView.text + "'"
-        }
-    }
-
+    
 }
+
+
+
+
+
