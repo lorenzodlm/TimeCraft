@@ -18,13 +18,13 @@ import com.example.timecraft.databinding.FragmentAchievementsBinding
 class MyachievementsRecyclerViewAdapter(
     private val values: List<PlaceholderItem>) {
 
-    private class ViewHolder(binding: FragmentAchievementsBinding) :
+    inner class ViewHolder(binding: FragmentAchievementsBinding) :
         RecyclerView.ViewHolder(binding.root) {
         val achievementRV = binding.achievementsRV
 
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+    fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
         return ViewHolder(
             FragmentAchievementsBinding.inflate(
@@ -35,7 +35,7 @@ class MyachievementsRecyclerViewAdapter(
         )
 
     }
-    
+
 }
 
 
