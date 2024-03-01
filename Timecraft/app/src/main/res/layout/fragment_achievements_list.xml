@@ -27,7 +27,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/achievement_description"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.03"
         app:layout_constraintStart_toEndOf="@+id/achievement_icon"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
@@ -36,7 +36,7 @@
         android:id="@+id/achievement_description"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_gravity="center|bottom"
         android:text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor."
         android:textSize="11sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -44,6 +44,6 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/achievement_icon"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.843" />
+        app:layout_constraintVertical_bias="0.71000004" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
