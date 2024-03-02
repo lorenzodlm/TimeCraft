@@ -22,13 +22,15 @@ class TaskFragment : Fragment() {
 
     override fun onViewCreated(binding: View, savedInstanceState: Bundle?) {
         super.onViewCreated(binding, savedInstanceState)
-
+        
         view.fab.setOnClickListener {
-            requireActivity().supportFragmentManager
-                .beginTransaction()
-                .replace(R.id.fragment_container, AddNewTask())
-                .addToBackStack(AddNewTask::class.java.name)
-                .commit()
+            val fragmentManager = requireActivity().supportFragmentManager
+            val existingFragment = fragmentManager.findFragmentByTag(AddNewTask.TAG)
+            if (existingFragment == null) {
+                val newTaskFragment = AddNewTask.newInstance()
+                newTaskFragment.show(fragmentManager, AddNewTask.TAG)
+            }
         }
+
     }
 }
