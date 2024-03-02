@@ -6,4 +6,5 @@ public interface DialogCloseListener {
 
     public void handleDialogClose(DialogInterface dialog);
 
+    void handleDialogClose();
 }
