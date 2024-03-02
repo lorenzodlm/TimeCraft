@@ -2,6 +2,7 @@ package com.example.timecraft
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.fragment.app.Fragment
 import com.example.timecraft.databinding.ActivityMainBinding
 import com.example.timecraft.ui.task.TaskFragment
@@ -18,14 +19,16 @@ class MainActivity : AppCompatActivity() {
         val view: BottomNavigationView = findViewById(R.id.bottom_navigation)
 
         view.setOnItemSelectedListener { menuItem ->
-            when(menuItem.itemId) {
+            when (menuItem.itemId) {
                 R.id.item_tasks -> changeFragment(TaskFragment())
                 R.id.item_home -> changeFragment(HomeFragment())
                 R.id.item_profile -> changeFragment(ProfileFragment())
                 else -> false
             }
         }
+        view.selectedItemId = R.id.item_home
     }
+
 
     private fun changeFragment(fragment: Fragment): Boolean {
         supportFragmentManager
