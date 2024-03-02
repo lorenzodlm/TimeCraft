@@ -32,9 +32,9 @@ class AchievementFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val view = inflater.inflate(R.layout.fragment_achievements_list, container, false)
+        val view = inflater.inflate(R.layout.fragment_achievements, container, false)
 
-        recyclerView = view.findViewById(R.id.achievement_name)
+        recyclerView = view.findViewById(R.id.achievementsRV)
 
         if (view is RecyclerView) {
             with(view) {

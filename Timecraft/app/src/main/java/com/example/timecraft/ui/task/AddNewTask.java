@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,7 @@ import android.widget.EditText;
 
 //import androidx.annotation.Nullable;
 
+import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 
 import com.example.timecraft.R;
@@ -102,6 +104,7 @@ public class AddNewTask extends BottomSheetDialogFragment {
             @Override
             public void onClick(View v) {
                 String text = newTaskText.getText().toString();
+                Log.d(TAG, "Save button clicked. Task text: " + text);
                 if (finalIsUpdate1) {
                     db.updateTask(bundle.getInt("id"), text);
 
@@ -112,6 +115,7 @@ public class AddNewTask extends BottomSheetDialogFragment {
                     db.insertTask(task);
                     if(listener!=null){
                         listener.onTaskAdded();
+                        Log.d(TAG, "Listener triggered: onTaskAdded()");
                     }
                 }
                 dismiss();
@@ -119,11 +123,18 @@ public class AddNewTask extends BottomSheetDialogFragment {
         });
     }
     @Override
-    public void onDismiss(DialogInterface dialog) {
+//    public void onDismiss(DialogInterface dialog) {
+//        super.onDismiss(dialog);
+//        Log.d(TAG, "Dialog dismissed");
+//        Activity activity = getActivity();
+//        if (activity instanceof DialogCloseListener)
+//            ((DialogCloseListener) activity).handleDialogClose(dialog);
+//    }
+    public void onDismiss(@NonNull DialogInterface dialog) {
         super.onDismiss(dialog);
-        Activity activity = getActivity();
-        if (activity instanceof DialogCloseListener)
-            ((DialogCloseListener) activity).handleDialogClose(dialog);
+        if (getActivity() instanceof OnTaskAddedListener) {
+            ((OnTaskAddedListener) getActivity()).onTaskAdded();
+        }
     }
 
 }
