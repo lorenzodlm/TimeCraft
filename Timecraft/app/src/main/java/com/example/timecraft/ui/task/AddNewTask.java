@@ -19,22 +19,28 @@ import android.widget.EditText;
 import androidx.core.content.ContextCompat;
 
 import com.example.timecraft.R;
+import com.example.timecraft.ui.task.Adapter.ToDoAdapter;
 import com.example.timecraft.ui.task.Model.ToDoModel;
 import com.example.timecraft.ui.task.utils.DatabaseHandler;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
-public class AddNewTask extends BottomSheetDialogFragment {
+import org.jetbrains.annotations.NotNull;
 
+public class AddNewTask extends BottomSheetDialogFragment {
+    private OnTaskAddedListener listener;
     public static final String TAG = "AddNewTask";
 
     private EditText newTaskText;
     private Button newTaskSaveButton;
     private DatabaseHandler db;
 
-    public static AddNewTask newInstance() {
-        return new AddNewTask();
+    public interface OnTaskAddedListener{
+        void onTaskAdded();
     }
 
+    public void setOnTaskAddedListener(OnTaskAddedListener listener){
+        this.listener = listener;
+    }
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -104,6 +110,9 @@ public class AddNewTask extends BottomSheetDialogFragment {
                     task.setTask(text);
                     task.setStatus(0);
                     db.insertTask(task);
+                    if(listener!=null){
+                        listener.onTaskAdded();
+                    }
                 }
                 dismiss();
             }
@@ -116,4 +125,5 @@ public class AddNewTask extends BottomSheetDialogFragment {
         if (activity instanceof DialogCloseListener)
             ((DialogCloseListener) activity).handleDialogClose(dialog);
     }
+
 }
