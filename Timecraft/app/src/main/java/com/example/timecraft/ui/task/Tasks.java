@@ -31,7 +31,7 @@ public class Tasks extends AppCompatActivity implements DialogCloseListener{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tasks);
+        setContentView(R.layout.fragment_task);
         getSupportActionBar().hide();
 
         db = new DatabaseHandler(this);
