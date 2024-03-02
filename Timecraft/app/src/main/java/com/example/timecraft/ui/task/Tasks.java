@@ -63,6 +63,7 @@ public class Tasks extends AppCompatActivity implements DialogCloseListener {
 
     @Override
     public void handleDialogClose() {
+<<<<<<< Updated upstream
 
         loadTasksFromDatabase();
     }
@@ -70,11 +71,24 @@ public class Tasks extends AppCompatActivity implements DialogCloseListener {
      @Override
      public void handleDialogClose(DialogInterface dialog) {
          refreshTaskList();
+=======
+        loadTasksFromDatabase();
+    }
+
+    @Override
+    public void handleDialogClose(DialogInterface dialog) {
+        // Refresh the task list when the dialog is closed
+        refreshTaskList();
+>>>>>>> Stashed changes
     }
 
     private void refreshTaskList() {
         // Retrieve the updated task list from the database
         List<ToDoModel> updatedTaskList = db.getAllTasks();
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
         // Reverse the task list to display the latest tasks first
         Collections.reverse(updatedTaskList);
 

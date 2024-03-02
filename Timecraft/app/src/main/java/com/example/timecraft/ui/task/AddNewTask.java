@@ -22,7 +22,12 @@ public class AddNewTask extends DialogFragment {
     private EditText newTaskText;
     private Button newTaskSaveButton;
     private DatabaseHandler db;
+    public static final String TAG = "AddNewTask";
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
