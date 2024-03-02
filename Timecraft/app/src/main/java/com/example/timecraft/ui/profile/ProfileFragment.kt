@@ -43,7 +43,7 @@ class ProfileFragment : Fragment() {
             requireActivity().supportFragmentManager
                 .beginTransaction()
                 .replace(R.id.fragment_container, CompletedTasksFragment())
-                .addToBackStack(TaskFragment::class.java.name)
+                .addToBackStack(CompletedTasksFragment::class.java.name)
                 .commit()
         }
 

@@ -53,12 +53,12 @@ public class Tasks extends AppCompatActivity implements DialogCloseListener{
         Collections.reverse(taskList);
         tasksAdapter.setTasks(taskList);
 
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                new AddNewTask().show(getSupportFragmentManager(), AddNewTask.TAG);
-            }
-        });
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                new AddNewTask().show(getSupportFragmentManager(), AddNewTask.TAG);
+//            }
+//        });
 
     }
 

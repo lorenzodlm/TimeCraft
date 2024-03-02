@@ -5,7 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.timecraft.R
 import com.example.timecraft.databinding.FragmentTaskBinding
+import com.example.timecraft.ui.profile.SettingsFragment
 
 class TaskFragment : Fragment() {
 
@@ -16,5 +18,17 @@ class TaskFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         return view.root
+    }
+
+    override fun onViewCreated(binding: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(binding, savedInstanceState)
+
+        view.fab.setOnClickListener {
+            requireActivity().supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.fragment_container, AddNewTask())
+                .addToBackStack(AddNewTask::class.java.name)
+                .commit()
+        }
     }
 }
