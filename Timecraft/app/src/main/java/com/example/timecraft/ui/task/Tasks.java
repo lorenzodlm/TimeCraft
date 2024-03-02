@@ -1,13 +1,13 @@
 package com.example.timecraft.ui.task;
 
-import android.content.DialogInterface;
-import android.os.Bundle;
-import android.view.View;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.DialogInterface;
+import android.os.Bundle;
+import android.view.View;
 
 import com.example.timecraft.R;
 import com.example.timecraft.ui.task.Adapter.ToDoAdapter;
@@ -15,16 +15,18 @@ import com.example.timecraft.ui.task.Model.ToDoModel;
 import com.example.timecraft.ui.task.utils.DatabaseHandler;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Tasks extends AppCompatActivity implements DialogCloseListener {
+public class Tasks extends AppCompatActivity implements DialogCloseListener{
 
     private RecyclerView tasksRecyclerView;
     private ToDoAdapter tasksAdapter;
     private FloatingActionButton fab;
 
-    private DatabaseHandler db;
+    private List<ToDoModel> taskList;
+    protected DatabaseHandler db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,8 @@ public class Tasks extends AppCompatActivity implements DialogCloseListener {
 
         db = new DatabaseHandler(this);
         db.openDatabase();
+
+        taskList = new ArrayList<>();
 
         tasksRecyclerView = findViewById(R.id.tasksRecyclerView);
         tasksRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -45,6 +49,10 @@ public class Tasks extends AppCompatActivity implements DialogCloseListener {
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new RecyclerItemTouchHelper(tasksAdapter));
         itemTouchHelper.attachToRecyclerView(tasksRecyclerView);
 
+        taskList = db.getAllTasks();
+        Collections.reverse(taskList);
+        tasksAdapter.setTasks(taskList);
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,35 +60,14 @@ public class Tasks extends AppCompatActivity implements DialogCloseListener {
             }
         });
 
-        loadTasksFromDatabase();
-    }
-
-    private void loadTasksFromDatabase() {
-        List<ToDoModel> tasks = db.getAllTasks();
-        Collections.reverse(tasks);
-        tasksAdapter.setTasks(tasks);
     }
 
     @Override
-    public void handleDialogClose(DialogInterface dialog) {
-        // Refresh the task list when the dialog is closed
-        refreshTaskList();
-    }
-
-    private void refreshTaskList() {
-        // Retrieve the updated task list from the database
-        List<ToDoModel> updatedTaskList = db.getAllTasks();
-
-        // Reverse the task list to display the latest tasks first
-        Collections.reverse(updatedTaskList);
-
-        // Update the RecyclerView with the updated task list
-        tasksAdapter.setTasks(updatedTaskList);
+    public void handleDialogClose(DialogInterface dialog){
+        taskList = db.getAllTasks();
+        Collections.reverse(taskList);
+        tasksAdapter.setTasks(taskList);
         tasksAdapter.notifyDataSetChanged();
     }
 
-    @Override
-    public void handleDialogClose() {
-        loadTasksFromDatabase();
-    }
 }
