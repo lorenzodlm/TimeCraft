@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.example.timecraft.ui.task.Adapter.CalendarAdapter;
 import com.example.timecraft.ui.task.Adapter.EventAdapter;
+import com.example.timecraft.ui.task.DailyCalendarActivity;
 import com.example.timecraft.ui.task.Event;
 import com.example.timecraft.ui.task.utils.CalendarUtils;
 
@@ -93,5 +94,9 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarAdapt
     public void newEventAction(View view)
     {
         startActivity(new Intent(this, EventEditActivity.class));
+    }
+
+    public void dailyAction(View view) {
+        startActivity(new Intent(this, DailyCalendarActivity.class));
     }
 }
