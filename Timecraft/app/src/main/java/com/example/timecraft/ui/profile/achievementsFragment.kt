@@ -34,7 +34,7 @@ class AchievementFragment : Fragment() {
     ): View {
         val view = inflater.inflate(R.layout.fragment_achievements_list, container, false)
 
-        recyclerView = view.findViewById(R.id.achievementsRV)
+        recyclerView = view.findViewById(R.id.achievement_name)
 
         if (view is RecyclerView) {
             with(view) {
@@ -42,7 +42,6 @@ class AchievementFragment : Fragment() {
                     columnCount <= 1 -> LinearLayoutManager(context)
                     else -> GridLayoutManager(context, columnCount)
                 }
-                adapter = MyachievementsRecyclerViewAdapter(PlaceholderContent.ITEMS)
             }
         }
         return view

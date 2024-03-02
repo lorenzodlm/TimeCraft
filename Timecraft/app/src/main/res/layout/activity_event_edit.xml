@@ -54,7 +54,6 @@
         android:layout_height="wrap_content"
         android:text="Save"
         android:textColor="@color/orange"
-        android:background=""
         android:textStyle="bold"
         android:onClick="saveEventAction"
         android:layout_gravity="center"

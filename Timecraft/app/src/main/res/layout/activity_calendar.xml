@@ -14,7 +14,6 @@
         android:layout_gravity="center"
         android:text="Weekly"
         android:textColor="@color/orange"
-        android:background=""
         android:textStyle="bold"
         android:onClick="weeklyAction"
         android:textSize="20sp"/>
@@ -32,7 +31,6 @@
             android:layout_weight="1"
             android:text="@string/BackCalendarButton"
             android:textColor="@color/orange"
-            android:background=""
             android:textStyle="bold"
             android:onClick="previousMonthAction"
             android:textSize="20sp"/>
@@ -53,7 +51,6 @@
             android:layout_weight="1"
             android:text="@string/ForwardCalendarButton"
             android:textColor="@color/orange"
-            android:background=""
             android:textStyle="bold"
             android:onClick="nextMonthAction"
             android:textSize="20sp"/>
